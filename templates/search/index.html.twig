@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Search{% endblock %}
+
+{% block body %}
+{# planB #}
+<script>const url = "{{path('searchfilm')}}";</script>
+<script src="{{asset('./js/search.js')}}" defer></script>
+{# planA #}
+<span id="spanurl" data-url="{{path('searchfilm')}}"></span>
+<form name="search">
+    <div><input type="text" name="valeur" placeholder="Que cherchez vous?"></div>
+    <select name="champ">
+        <option value="casting">Casting</option>
+        <option value="directors">Directors</option>
+        <option value="title">Title</option>
+    </select>
+    <div>
+        10<input type="radio" name="limit" value="10">
+        20<input type="radio" name="limit" value="20">
+        50<input type="radio" name="limit" value="50">
+    </div>
+    <div>
+        <input type="submit" value="Rechercher" name="submit">
+    </div>
+    <div>
+        <a href=""></a>
+    </div>
+</form>
+<div id="results"></div>
+{% endblock %}

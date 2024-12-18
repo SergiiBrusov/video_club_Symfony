@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MoviesFull{% endblock %}
+
+{% block body %}
+    <h1>MoviesFull</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ movies_full.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ movies_full.title }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ movies_full.year }}</td>
+            </tr>
+            <tr>
+                <th>Genres</th>
+                <td>{{ movies_full.genres }}</td>
+            </tr>
+            <tr>
+                <th>Directors</th>
+                <td>{{ movies_full.directors }}</td>
+            </tr>
+            <tr>
+                <th>Casting</th>
+                <td>{{ movies_full.casting }}</td>
+            </tr>
+            <tr>
+                <th>Writers</th>
+                <td>{{ movies_full.writers }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_movies_full_index') }}">back to list</a>
+
+    <a href="{{ path('app_movies_full_edit', {'id': movies_full.id}) }}">edit</a>
+
+    {{ include('movies_full/_delete_form.html.twig') }}
+{% endblock %}
